@@ -1,0 +1,12 @@
+<% if @winner == "tie" %>
+	<h1> It's a tie! </h1>
+<% elsif @winner == "player" %>
+	<h1> You win! </h1>
+<% else %>
+	<h1> Computer wins! </h1>
+<% end %>
+
+<p> Your move: <%= @player%> </p>
+<p> Computer's move: <%= @computer%> </p>
+
+<h2> <a href="/rps">Play again </a></h2>

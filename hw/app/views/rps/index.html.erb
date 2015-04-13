@@ -1,0 +1,33 @@
+<%#
+Description: This html file shows the three images of the rock-paper-scissors game that the user can select.
+References:
+1. How to include CSS in this file
+http://stackoverflow.com/questions/804961/how-do-i-use-css-with-a-ruby-on-rails-application
+
+2. How to resize an image with CSSS
+http://stackoverflow.com/questions/787839/resize-image-proportionally-with-css 
+
+3. The images of the rock-paper-scissors from google images
+Rock: https://www.bluetrack.com/uploads/items_images/river-rock-stress-balls1.jpg
+Paper: http://1106design.com/wp-content/uploads/2014/05/paper.jpg
+Scissors: http://upload.wikimedia.org/wikipedia/commons/1/18/Skalm_2.JPG
+
+%>
+
+<%= stylesheet_link_tag "rps.css" %>
+
+<ul>
+	<% @moves.each do |move| %>
+		<div>
+			<a href="/rps_play?choice=<%= move %>">
+				<% if move == "rock" %>
+					<img class="resize" src = "https://www.bluetrack.com/uploads/items_images/river-rock-stress-balls1.jpg">
+				<% elsif move == "paper" %>
+					<img class="resize" src = "http://1106design.com/wp-content/uploads/2014/05/paper.jpg">
+				<% else %>
+					<img class="resize" src = "http://upload.wikimedia.org/wikipedia/commons/1/18/Skalm_2.JPG">
+				<% end %>			
+			</a>
+		</div>
+	<% end %>
+</ul>
