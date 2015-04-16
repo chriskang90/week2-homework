@@ -1,3 +1,6 @@
+# This class is the controller for the rock-paper-scissors game.  When control is passed to the controller, it will retrieve the player's move, 
+# randomly generate a move for the computer, and then determine the winner before passing control to the view.
+
 class RpsController < ApplicationController
 
 	# This method creates an instance variable for all the moves in rock-paper-scissors
@@ -7,11 +10,11 @@ class RpsController < ApplicationController
 
 	# This method retrieves the player's move, randomly generates a move for the computer, and determines the winner using another method
 	def play
-		# retreive player choice from URL parameter
+		# retrieve player choice from URL parameter
 		@player = params["choice"]
 
-		# moves_list.sample returns a one-element array and we extract the first element with [0]
-		@computer = moves_list.sample(1)[0]
+		# randomly generate move for the computer
+		@computer = moves_list.sample
 
 		# determine the winner
 		@winner = determine_winner(@player, @computer)

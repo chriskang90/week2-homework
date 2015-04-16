@@ -1,3 +1,6 @@
+# This class is the controller for the greet page.  It will check to see if there is a query string parameter (salutation) to use as the string
+# for the greet.
+
 class GreetController < ApplicationController
 
 	def show
